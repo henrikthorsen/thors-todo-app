@@ -1,0 +1,21 @@
+{
+	"name": "boilerplate",
+	"version": "1.0.0",
+	"description": "bolierplate for a frontend project",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "webpack",
+		"dev": "webpack-dev-server --mode=development"
+	},
+	"author": "barbaraperic",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.12.16",
+		"@babel/preset-react": "^7.12.13",
+		"babel-loader": "^8.2.3",
+		"webpack": "^4.46.0",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.3"
+	}
+}
