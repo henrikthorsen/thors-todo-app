@@ -45,6 +45,16 @@ const addTodo = () => {
 //    todos.removeChild(listItemRemoved);
 //}
 
+const addTodoEnter = (event) => {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("btn-add-todo").click();
+    }
+};
+
+let btnAddTodoEnter = document.querySelector("#todo-title-input");
+btnAddTodoEnter.addEventListener("keyup", addTodoEnter)
+
 let btnAddTodo = document.querySelector("#btn-add-todo");
 btnAddTodo.addEventListener("click", addTodo);
 
