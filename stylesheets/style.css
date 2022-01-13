@@ -69,3 +69,54 @@ h6 {
 }
 
 /* ADD THORS CONTENT BENEATH THIS LINE */
+
+/* global */
+body {
+  margin: 8px;
+}
+
+/* flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-direction-col {
+  flex-direction: column;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* list */
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+li {
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.background-color-salmon {
+  background-color: salmon;
+}
+
+.background-color-lightgray {
+  background-color: lightgray;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.todo-title {
+  margin-left: 24px;
+}
