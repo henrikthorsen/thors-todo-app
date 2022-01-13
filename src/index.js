@@ -4,6 +4,9 @@
 
 const addTodo = () => {
     const inputValue = document.getElementById("todo-title-input").value; //grabs the value from the input field
+    if (inputValue == '' ) {
+        return;
+    }
     const todos = document.getElementById("todos"); //grabs the ul element
     const listItem = document.createElement("li"); //creates a li item
     const statusWrapper = document.createElement("div"); //creates a div element
@@ -47,6 +50,10 @@ const addTodo = () => {
 
 const addTodoEnter = (event) => {
     event.preventDefault();
+    const inputValue = document.getElementById("todo-title-input").value; //grabs the value from the input field
+    if (inputValue == '' ) {
+        return;
+    }
     if (event.keyCode === 13) {
         document.getElementById("btn-add-todo").click();
     }
