@@ -3,16 +3,16 @@
 //p.innerHTML = "This is where the magic will happen!";
 
 const addTodo = () => {
-    const inputValue = document.getElementById("todo-title-input").value; //grabs the value from the input field
+    let inputValue = document.getElementById("todo-title-input").value; //grabs the value from the input field
     if (inputValue == '' ) {
         return;
     }
     const todos = document.getElementById("todos"); //grabs the ul element
     const listItem = document.createElement("li"); //creates a li item
     const statusWrapper = document.createElement("div"); //creates a div element
-    const statusIcon = document.createElement("i"); //creates a icon element
+    const statusIcon = document.createElement("i"); //creates an icon element
     const todoTitle = document.createElement("p"); //creates a p element
-    const removeIcon = document.createElement("i"); //creates a icon element
+    const removeIcon = document.createElement("i"); //creates an icon element
     todoTitle.innerHTML = inputValue; //the value from the input field is set as text inside the p element
     listItem.classList.add("todo", "background-color-salmon", "flex", "justify-content-space-between", "align-items-center"); //the class todo is added to the list item 
     statusWrapper.classList.add("status-wrapper", "flex", "align-items-center");
@@ -26,6 +26,12 @@ const addTodo = () => {
     listItem.appendChild(removeIcon);
     inputValue = document.getElementById("todo-title-input").value = ""; //sets the input value to blank again
 }
+
+const someFunction = (event) => {
+    console.log(event.target);
+}
+
+
 
 // const markAsDone = () => { 
 //    listItem.classList.remove("background-color-salmon");

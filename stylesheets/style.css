@@ -120,3 +120,28 @@ li {
 .todo-title {
   margin-left: 24px;
 }
+
+/* input div */
+#input-field {
+  position: absolute;
+  bottom: 16px;
+  left: 0px;
+  width: 100%;
+  padding: 0 8px;
+}
+
+#todo-title-input {
+  flex: 1;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: lightpink;
+}
+
+#btn-add-todo {
+  margin-left: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: lightseagreen;
+}
