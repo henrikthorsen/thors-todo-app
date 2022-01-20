@@ -14,7 +14,7 @@ const addTodo = () => {
     const todoTitle = document.createElement("p"); //creates a p element
     const removeIcon = document.createElement("i"); //creates an icon element
     todoTitle.innerHTML = inputValue; //the value from the input field is set as text inside the p element
-    listItem.classList.add("todo", "background-color-salmon", "flex", "justify-content-space-between", "align-items-center"); //the class todo is added to the list item 
+    listItem.classList.add("todo", "undone", "background-color-salmon", "flex", "justify-content-space-between", "align-items-center"); //the class todo is added to the list item 
     statusWrapper.classList.add("status-wrapper", "flex", "align-items-center");
     statusIcon.classList.add("far", "fa-circle", "btn-mark-as-done"); //the classes far and fa-circle is added to the list item
     todoTitle.classList.add("todo-title");
@@ -25,13 +25,38 @@ const addTodo = () => {
     statusWrapper.appendChild(todoTitle);
     listItem.appendChild(removeIcon);
     inputValue = document.getElementById("todo-title-input").value = ""; //sets the input value to blank again
+    
+    statusIcon.addEventListener("click", (e) => {
+        console.log(e.target.parentElement.parentElement)
+        const listItemChangeStatus = e.target.parentElement.parentElement
+        const iconChangeStatus = e.target
+        changeStatus(listItemChangeStatus, iconChangeStatus)
+    })
+    removeIcon.addEventListener("click", (e) => {
+        //console.log(e.target.parentElement)
+        const listItemRemove = e.target.parentElement
+        removeTodo(listItemRemove)
+    })
 }
 
-const someFunction = (event) => {
-    console.log(event.target);
+
+//const someFunction = (event) => {
+//    console.log(event);
+//}
+
+const changeStatus = (listItemToChange, iconToChange) => { 
+    listItemToChange.classList.toggle("done");
+    listItemToChange.classList.toggle("undone");
+    listItemToChange.classList.toggle("background-color-salmon");
+    listItemToChange.classList.toggle("background-color-lightgray");
+    iconToChange.classList.toggle("far");
+    iconToChange.classList.toggle("fa-circle");
+    iconToChange.classList.toggle("btn-mark-as-done");
+    iconToChange.classList.toggle("fas");
+    iconToChange.classList.toggle("fa-check-circle");
+    iconToChange.classList.toggle("btn-mark-as-undone");
+    listItemToChange.statusWrapper.todoTitle.classList.toggle("text-line-through");
 }
-
-
 
 // const markAsDone = () => { 
 //    listItem.classList.remove("background-color-salmon");
@@ -49,12 +74,11 @@ const someFunction = (event) => {
 //    todoTitle.classList.remove("text-line-through");
 //}
 
-//const removeTodo = () => {
-//    const listItemRemoved = ????;
-//    todos.removeChild(listItemRemoved);
-//}
+const removeTodo = (listItem) => {
+    todos.removeChild(listItem);
+}
 
-const addTodoEnter = (event) => {
+const addTodoEnter = (event) => { //this function makes it possible to add todos just by hitting enter
     event.preventDefault();
     const inputValue = document.getElementById("todo-title-input").value; //grabs the value from the input field
     if (inputValue == '' ) {
