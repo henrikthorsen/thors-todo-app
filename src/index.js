@@ -30,7 +30,8 @@ const addTodo = () => {
         console.log(e.target.parentElement.parentElement)
         const listItemChangeStatus = e.target.parentElement.parentElement
         const iconChangeStatus = e.target
-        changeStatus(listItemChangeStatus, iconChangeStatus)
+        const titleChangeStatus = e.target.nextSibling
+        changeStatus(listItemChangeStatus, iconChangeStatus, titleChangeStatus)
     })
     removeIcon.addEventListener("click", (e) => {
         //console.log(e.target.parentElement)
@@ -44,7 +45,7 @@ const addTodo = () => {
 //    console.log(event);
 //}
 
-const changeStatus = (listItemToChange, iconToChange) => { 
+const changeStatus = (listItemToChange, iconToChange, titleToChange) => { 
     listItemToChange.classList.toggle("done");
     listItemToChange.classList.toggle("undone");
     listItemToChange.classList.toggle("background-color-salmon");
@@ -55,7 +56,7 @@ const changeStatus = (listItemToChange, iconToChange) => {
     iconToChange.classList.toggle("fas");
     iconToChange.classList.toggle("fa-check-circle");
     iconToChange.classList.toggle("btn-mark-as-undone");
-    listItemToChange.statusWrapper.todoTitle.classList.toggle("text-line-through");
+    titleToChange.classList.toggle("text-line-through");
 }
 
 // const markAsDone = () => { 
