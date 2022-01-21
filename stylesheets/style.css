@@ -75,6 +75,27 @@ body {
   margin: 8px;
 }
 
+.background-color-dark-mode {
+  background-color: black;
+}
+
+header {
+  margin-top: 8px;
+}
+
+.text-color-dark-mode {
+  color: white;
+}
+
+#btn-change-mode {
+  padding: 8px 16px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: gray;
+  color: white;
+  border: none;
+}
+
 /* flexbox */
 .flex {
   display: flex;
@@ -86,6 +107,14 @@ body {
 
 .justify-content-space-between {
   justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-self-center {
+  align-self: center; 
 }
 
 .align-items-center {
@@ -101,15 +130,16 @@ ul {
 
 li {
   padding: 8px 16px;
+  height: 40px;
   border-radius: 8px;
   margin: 8px 0;
 }
 
-.background-color-salmon {
+.background-color-undone {
   background-color: salmon;
 }
 
-.background-color-lightgray {
+.background-color-done {
   background-color: lightgray;
 }
 
@@ -132,16 +162,29 @@ li {
 
 #todo-title-input {
   flex: 1;
-  padding: 0 16px;
+  padding: 8px 16px;
+  height: 40px;
   border-radius: 8px;
-  border: none;
-  background-color: lightpink;
+  border: 1px solid gray;
+  /* background-color: lightpink; */
 }
 
 #btn-add-todo {
   margin-left: 16px;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 0;
+  /* padding: 8px 16px;
+  width: 32px; 
+  height: 32px;
+  border-radius: 16px; */
   border: none;
-  background-color: lightseagreen;
+  background-color: transparent;
+  /* background-color: lightseagreen; */
 }
+
+#icon-add-todo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  /* border: 2px solid black; */
+  background-color: cadetblue;
+} 

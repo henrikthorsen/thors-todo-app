@@ -6,25 +6,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./stylesheets/style.css" />
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-		<title>Thors todo app</title>
+		<title>Grey Salmon Todos</title>
 	</head>
 	<body>
-		<!-- <header class="flex justify-content-space-between">
-			<p>Logo</p>
-			<p>Thors todo app</p>
-			<p>Menu</p>
-		</header> -->
+		<header class="flex justify-content-space-between">
+			<h1>Grey Salmon Todos</h1>
+			<button id="btn-change-mode">
+				Dark mode
+			</button>
+		</header>
 		<main>
-			<h1>My todos</h1>
 			<div id="list-wrapper">
 				<ul id="todos">
 				</ul>
 			</div>
-			<div id="input-field" class="flex justify-content-space-between">
+			<div id="input-field" class="flex justify-content-space-between align-items-center">
 				<input id="todo-title-input" type="text"
-				 placeholder="Enter todo">
-				<button id="btn-add-todo">Add
-				 todo</button>
+				 placeholder="Enter todo" autofocus/>
+				<button id="btn-add-todo">
+					<i class="fas fa-plus" id="icon-add-todo"></i>
+				</button>
 			</div>
 		</main>
 		<!-- <footer class="flex justify-content-space-between">

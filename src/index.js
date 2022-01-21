@@ -1,7 +1,3 @@
-// console.log("Hello from index.js");
-//const p = document.getElementById("todos");
-//p.innerHTML = "This is where the magic will happen!";
-
 const addTodo = () => {
     let inputValue = document.getElementById("todo-title-input").value; //grabs the value from the input field
     if (inputValue == '' ) {
@@ -14,7 +10,8 @@ const addTodo = () => {
     const todoTitle = document.createElement("p"); //creates a p element
     const removeIcon = document.createElement("i"); //creates an icon element
     todoTitle.innerHTML = inputValue; //the value from the input field is set as text inside the p element
-    listItem.classList.add("todo", "undone", "background-color-salmon", "flex", "justify-content-space-between", "align-items-center"); //the class todo is added to the list item 
+    //todos.classList.add("done-todos", "undone-todos");
+    listItem.classList.add("todo", "undone", "background-color-undone", "flex", "justify-content-space-between", "align-items-center"); //the class todo is added to the list item 
     statusWrapper.classList.add("status-wrapper", "flex", "align-items-center");
     statusIcon.classList.add("far", "fa-circle", "btn-mark-as-done"); //the classes far and fa-circle is added to the list item
     todoTitle.classList.add("todo-title");
@@ -24,7 +21,6 @@ const addTodo = () => {
     statusWrapper.appendChild(statusIcon);
     statusWrapper.appendChild(todoTitle);
     listItem.appendChild(removeIcon);
-    inputValue = document.getElementById("todo-title-input").value = ""; //sets the input value to blank again
     
     statusIcon.addEventListener("click", (e) => {
         console.log(e.target.parentElement.parentElement)
@@ -34,22 +30,27 @@ const addTodo = () => {
         changeStatus(listItemChangeStatus, iconChangeStatus, titleChangeStatus)
     })
     removeIcon.addEventListener("click", (e) => {
-        //console.log(e.target.parentElement)
         const listItemRemove = e.target.parentElement
         removeTodo(listItemRemove)
     })
+
+    inputValue = document.getElementById("todo-title-input").value = ""; //sets the input value to blank again
+    document.getElementById("todo-title-input").focus(); //resets the focus on the input field
+    //todoArray.push(listItem);
 }
 
-
-//const someFunction = (event) => {
-//    console.log(event);
-//}
+// const showTodos = () => {
+//     const ulItem = document.getElementById("todos");
+//     if () {
+        
+//     }
+// }
 
 const changeStatus = (listItemToChange, iconToChange, titleToChange) => { 
     listItemToChange.classList.toggle("done");
     listItemToChange.classList.toggle("undone");
-    listItemToChange.classList.toggle("background-color-salmon");
-    listItemToChange.classList.toggle("background-color-lightgray");
+    listItemToChange.classList.toggle("background-color-undone");
+    listItemToChange.classList.toggle("background-color-done");
     iconToChange.classList.toggle("far");
     iconToChange.classList.toggle("fa-circle");
     iconToChange.classList.toggle("btn-mark-as-done");
@@ -58,22 +59,6 @@ const changeStatus = (listItemToChange, iconToChange, titleToChange) => {
     iconToChange.classList.toggle("btn-mark-as-undone");
     titleToChange.classList.toggle("text-line-through");
 }
-
-// const markAsDone = () => { 
-//    listItem.classList.remove("background-color-salmon");
-//    listItem.classList.add("background-color-lightgray");
-//    statusIcon.classList.remove("far", "fa-circle", "btn-mark-as-done");
-//    statusIcon.classList.add("fas", "fa-check-circle", "btn-mark-as-undone");
-//    todoTitle.classList.add("text-line-through");
-//}
-
-// const markAsUndone = () => {
-//    listItem.classList.remove("background-color-lightgray");
-//    listItem.classList.add("background-color-salmon");
-//    statusIcon.classList.remove("fas", "fa-check-circle", "btn-mark-as-undone");
-//   statusIcon.classList.add("far", "fa-circle", "btn-mark-as-done");
-//    todoTitle.classList.remove("text-line-through");
-//}
 
 const removeTodo = (listItem) => {
     todos.removeChild(listItem);
@@ -86,27 +71,48 @@ const addTodoEnter = (event) => { //this function makes it possible to add todos
         return;
     }
     if (event.keyCode === 13) {
-        document.getElementById("btn-add-todo").click();
+        document.getElementById("icon-add-todo").click();
     }
 };
+
+const changeMode = () => {
+    const bodyElement = document.querySelector("body");
+    const h1Element = document.querySelector("h1");
+    const btnModeElement = document.querySelector("#btn-change-mode");
+    bodyElement.classList.toggle("background-color-dark-mode");
+    h1Element.classList.toggle("text-color-dark-mode");
+    if (btnModeElement.innerText === "Dark mode") {
+        btnModeElement.innerText = "Light mode"
+    } else {
+        btnModeElement.innerText = "Dark mode"
+    }
+}
+
+
+
+//let arrayOfDoneItems = document.getElementsByClassName("undone");
+
+
+//let showDone = () => {
+//    let arrayOfDoneItems = document.getElementsByClassName("done");
+//    return
+//}
 
 let btnAddTodoEnter = document.querySelector("#todo-title-input");
 btnAddTodoEnter.addEventListener("keyup", addTodoEnter)
 
-let btnAddTodo = document.querySelector("#btn-add-todo");
-btnAddTodo.addEventListener("click", addTodo);
+//let btnAddTodo = document.querySelector("#btn-add-todo");
+//btnAddTodo.addEventListener("click", addTodo);
 
-//let btnMarkAsDoneAll = document.querySelectorAll(".btn-mark-as-done");
-//btnMarkAsDoneAll.addEventListener("click", markAsDone);
+let iconAddTodo = document.querySelector("#icon-add-todo");
+iconAddTodo.addEventListener("click", addTodo);
 
-//let btnMarkAsUndone = document.querySelector(".btn-mark-as-undone");
-//btnMarkAsUndone.addEventListener("click", markAsUndone);
+let btnChangeMode = document.querySelector("#btn-change-mode");
+btnChangeMode.addEventListener("click", changeMode);
 
-//let btnRemoveTodo = document.querySelector(".btn-remove");
-//btnRemoveTodo.addEventListener("click", removeTodo);
+//let btnFilterDone = document.querySelector("#btn-filter-done");
+//btnFilterDone.addEventListener("click", showDone);
 
-
-//var item = document.querySelector("div");
 
 //var el = document.querySelectorAll("button");
 //el[0].addEventListener("click", changeHeight)
@@ -114,12 +120,8 @@ btnAddTodo.addEventListener("click", addTodo);
 //el[1].addEventListener("click", changeHeight)
 //el[2].addEventListener("click", changeWidth)
 
-//let list = document.querySelector(".btn-mark-as-done");
-//list.addEventListener('click', markAsDone);
 
-//<i class="far fa-circle"></i>
-//<i class="fas fa-times"></i>
-//<i class="fas fa-check-circle"></i>
+
 
 
 
