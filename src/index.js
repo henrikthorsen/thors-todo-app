@@ -164,7 +164,7 @@ const addTodoEnter = (event) => { //function that makes it possible to add todos
         return;
     }
     if (event.keyCode === 13) { //if enter key is clicked
-        document.getElementById("icon-add-todo").click(); //fire a click on the addTodo icon
+        document.getElementById("btn-add-todo").click(); //fire a click on the addTodo icon
     }
 };
 
@@ -197,7 +197,7 @@ btnAddTodoEnter.addEventListener("keyup", addTodoEnter) //adds an eventlistener 
 //let btnAddTodo = document.querySelector("#btn-add-todo");
 //btnAddTodo.addEventListener("click", addTodo);
 
-let iconAddTodo = document.querySelector("#icon-add-todo");
+let iconAddTodo = document.querySelector("#btn-add-todo");
 iconAddTodo.addEventListener("click", addTodo); //adds an eventlistener til the addTodo icon
 
 let btnChangeMode = document.querySelector("#btn-change-mode");

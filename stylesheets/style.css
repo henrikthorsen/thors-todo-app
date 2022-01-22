@@ -196,13 +196,13 @@ li {
 #btn-add-todo {
   margin-left: 8px;
   padding: 0;
-  /* padding: 8px 16px;
-  width: 32px; 
-  height: 32px;
-  border-radius: 16px; */
+  padding: 8px 16px;
+  /* width: 32px; */
+  height: 40px;
+  border-radius: 8px;
   border: none;
-  background-color: transparent;
-  /* background-color: lightseagreen; */
+  /* background-color: transparent;  */
+  background-color: cadetblue;
 }
 
 #icon-add-todo {
