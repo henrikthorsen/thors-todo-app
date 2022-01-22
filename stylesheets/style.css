@@ -68,15 +68,31 @@ h6 {
 	isolation: isolate;
 }
 
-/* ADD THORS CONTENT BENEATH THIS LINE */
+/* THORS CONTENT ADDED BENEATH THIS LINE */
 
 /* global */
 body {
   margin: 8px;
 }
 
+.color-salmon {
+  color: salmon;
+}
+
+.color-gray {
+  color: gray;
+}
+
 .background-color-dark-mode {
   background-color: black;
+}
+
+.background-color-active-button {
+  background-color: salmon;
+}
+
+.background-color-inactive-button {
+  background-color: gray;
 }
 
 header {
@@ -85,13 +101,13 @@ header {
 
 .text-color-dark-mode {
   color: white;
-}
+} 
 
-#btn-change-mode {
+.button {
+  margin-left: 8px;
   padding: 8px 16px;
   height: 40px;
   border-radius: 8px;
-  background-color: gray;
   color: white;
   border: none;
 }
@@ -107,6 +123,10 @@ header {
 
 .justify-content-space-between {
   justify-content: space-between;
+}
+
+.justify-content-end {
+  justify-content: end;
 }
 
 .justify-content-center {
@@ -133,6 +153,10 @@ li {
   height: 40px;
   border-radius: 8px;
   margin: 8px 0;
+}
+
+.display-none {
+  display: none;
 }
 
 .background-color-undone {
@@ -170,7 +194,7 @@ li {
 }
 
 #btn-add-todo {
-  margin-left: 16px;
+  margin-left: 8px;
   padding: 0;
   /* padding: 8px 16px;
   width: 32px; 

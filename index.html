@@ -10,11 +10,22 @@
 	</head>
 	<body>
 		<header class="flex justify-content-space-between">
-			<h1>Grey Salmon Todos</h1>
-			<button id="btn-change-mode">
+			<h1><span class="color-gray">Grey </span> <span class="color-salmon">Salmon</span> Todos</h1>
+			<button id="btn-change-mode" class="button background-color-inactive-button">
 				Dark mode
 			</button>
 		</header>
+		<div id="subheader" class="flex justify-content-end">
+				<button id="btn-filter-all" class="button background-color-active-button">
+					All
+				</button>
+				<button id="btn-filter-undone" class="button background-color-inactive-button">
+					Undone
+				</button>
+				<button id="btn-filter-done" class="button background-color-inactive-button">
+					Done
+				</button>
+		</div>
 		<main>
 			<div id="list-wrapper">
 				<ul id="todos">
