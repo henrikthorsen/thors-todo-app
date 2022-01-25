@@ -155,11 +155,12 @@ header {
 
 /* list */
 #list-wrapper {
-  margin: 0 8px;
+  margin: 0;
   position: absolute;
   top: 120px;
   left: 0;
   width: 100%;
+  padding: 0 8px;
 }
 
 ul {
