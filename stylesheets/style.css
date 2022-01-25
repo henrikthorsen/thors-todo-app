@@ -72,7 +72,7 @@ h6 {
 
 /* global */
 body {
-  margin: 8px;
+  /* padding: 8px; */
 }
 
 .color-salmon {
@@ -95,8 +95,20 @@ body {
   background-color: gray;
 }
 
+#top {
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 8px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 120px;
+  z-index: 3;
+}
+
 header {
-  margin-top: 8px;
+  padding-top: 8px;
 }
 
 .text-color-dark-mode {
@@ -142,6 +154,14 @@ header {
 }
 
 /* list */
+#list-wrapper {
+  margin: 0 8px;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+}
+
 ul {
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
@@ -177,11 +197,13 @@ li {
 
 /* input div */
 #input-field {
-  position: absolute;
-  bottom: 16px;
+  position: fixed;
+  bottom: 0px;
   left: 0px;
   width: 100%;
-  padding: 0 8px;
+  padding: 16px 8px;
+  /* margin-top: 40px;*/
+  background-color: antiquewhite;
 }
 
 #todo-title-input {
@@ -197,6 +219,7 @@ li {
   margin-left: 8px;
   padding: 0;
   padding: 8px 16px;
+  color: white;
   /* width: 32px; */
   height: 40px;
   border-radius: 8px;

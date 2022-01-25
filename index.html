@@ -9,22 +9,24 @@
 		<title>Grey Salmon Todos</title>
 	</head>
 	<body>
-		<header class="flex justify-content-space-between">
-			<h1><span class="color-gray">Grey </span> <span class="color-salmon">Salmon</span> Todos</h1>
-			<button id="btn-change-mode" class="button background-color-inactive-button">
-				Dark mode
-			</button>
-		</header>
-		<div id="subheader" class="flex justify-content-flex-end">
-				<button id="btn-filter-all" class="button background-color-active-button">
-					All
+		<div id="top">
+			<header class="flex justify-content-space-between">
+				<h1><span class="color-gray">Grey </span> <span class="color-salmon">Salmon</span> Todos</h1>
+				<button id="btn-change-mode" class="button background-color-inactive-button">
+					Dark mode
 				</button>
-				<button id="btn-filter-undone" class="button background-color-inactive-button">
-					Undone
-				</button>
-				<button id="btn-filter-done" class="button background-color-inactive-button">
-					Done
-				</button>
+			</header>
+			<div id="subheader" class="flex justify-content-flex-end">
+					<button id="btn-filter-all" class="button background-color-active-button">
+						All
+					</button>
+					<button id="btn-filter-undone" class="button background-color-inactive-button">
+						Undone
+					</button>
+					<button id="btn-filter-done" class="button background-color-inactive-button">
+						Done
+					</button>
+			</div>
 		</div>
 		<main>
 			<div id="list-wrapper">
@@ -36,15 +38,9 @@
 				 placeholder="Enter todo" autofocus/>
 				<button id="btn-add-todo">
 					Add
-					<!-- <i class="fas fa-plus" id="icon-add-todo"></i> -->
 				</button>
 			</div>
 		</main>
-		<!-- <footer class="flex justify-content-space-between">
-			<p>Will there be a footer?</p>
-			<p>This is the footer</p>
-			<p>Should there be a footer?</p>
-		</footer> -->
 		<script src="./src/index.js"></script>
 	</body>
 </html>
